@@ -1,0 +1,26 @@
+{
+  "name": "waits-for",
+  "version": "1.0.0",
+  "description": "utility function waits for a condition to return true before running the callback, via Promises",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EikosPartners/waits-for.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EikosPartners/waits-for/issues"
+  },
+  "homepage": "https://github.com/EikosPartners/waits-for#readme",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1"
+  }
+}
