@@ -1,8 +1,16 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.catchRejection = exports.waitsFor = undefined;
+
+var _bluebird = require('bluebird');
+
+var _bluebird2 = _interopRequireDefault(_bluebird);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function catchRejection(done) {
     return function (err) {
         console.error(err);
@@ -17,7 +25,7 @@ function waitsFor(f, c, i) {
         // optional "this" gets passed to adjust timeout
     intervalTime = i || 10; // optional interval
 
-    return new Promise(function (fufill, reject) {
+    return new _bluebird2.default(function (fufill, reject) {
         var interval = setInterval(function () {
             if (func()) {
                 clearTimeout(timeout);

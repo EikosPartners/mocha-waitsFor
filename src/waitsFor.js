@@ -1,3 +1,5 @@
+import Promise from 'bluebird';
+
 function catchRejection(done) {
     return function (err) {
         console.error(err);
