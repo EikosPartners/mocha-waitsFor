@@ -13,8 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function catchRejection(done) {
     return function (err) {
-        console.error(err);
-        done();
+        throw err;
     };
 }
 
@@ -37,7 +36,7 @@ function waitsFor(f, c, i) {
         var timeout = setTimeout(function () {
             clearInterval(interval);
             reject(new Error(context.test.title));
-        }, context && context.timeout() || 2000);
+        }, (context && context.timeout() || 2000) - 10);
     });
 }
 
