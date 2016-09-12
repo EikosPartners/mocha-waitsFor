@@ -1,6 +1,6 @@
 {
   "name": "mocha-waitsfor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "utility function waits for true condition before running callback, using promises",
   "main": "dist/waitsFor.js",
   "scripts": {
