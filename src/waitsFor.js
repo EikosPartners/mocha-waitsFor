@@ -28,5 +28,5 @@ function waitsFor(f, t, i) {
 
 export {
     waitsFor,
-    catchRejec
+    catchRejection
 }
