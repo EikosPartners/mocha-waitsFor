@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.catchRejec = exports.waitsFor = undefined;
+exports.catchRejection = exports.waitsFor = undefined;
 
 var _bluebird = require('bluebird');
 
@@ -39,4 +39,4 @@ function waitsFor(f, t, i) {
 }
 
 exports.waitsFor = waitsFor;
-exports.catchRejec = catchRejec;
+exports.catchRejection = catchRejection;
