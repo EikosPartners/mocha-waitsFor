@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.catchRejection = exports.waitsFor = undefined;
+exports.catchRejec = exports.waitsFor = undefined;
 
 var _bluebird = require('bluebird');
 
@@ -17,11 +17,9 @@ function catchRejection(done) {
     };
 }
 
-function waitsFor(f, c, i) {
+function waitsFor(f, t, i) {
     var func = f,
         // this function returns true when promise is fufilled
-    context = c,
-        // optional "this" gets passed to adjust timeout
     intervalTime = i || 10; // optional interval
 
     return new _bluebird2.default(function (fufill, reject) {
@@ -35,10 +33,10 @@ function waitsFor(f, c, i) {
 
         var timeout = setTimeout(function () {
             clearInterval(interval);
-            reject(new Error(context.test.title));
-        }, (context && context.timeout() || 2000) - 10);
+            reject(new Error('Waits for condition never met: ' + f.toString()));
+        }, t || 2000);
     });
 }
 
 exports.waitsFor = waitsFor;
-exports.catchRejection = catchRejection;
+exports.catchRejec = catchRejec;
