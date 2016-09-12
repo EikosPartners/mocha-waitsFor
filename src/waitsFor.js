@@ -6,9 +6,8 @@ function catchRejection(done) {
     }
 }
 
-function waitsFor(f, c, i) {
+function waitsFor(f, t, i) {
     var func = f, // this function returns true when promise is fufilled
-        context = c, // optional "this" gets passed to adjust timeout
         intervalTime = i || 10; // optional interval
 
     return new Promise(function (fufill, reject) {
@@ -22,12 +21,12 @@ function waitsFor(f, c, i) {
 
         var timeout = setTimeout(function () {
             clearInterval(interval);
-            reject(new Error(context.test.title));
-         }, (context && context.timeout() || 2000) - 10 );
+            reject(new Error('Waits for condition never met: ' + f.toString()));
+         }, t || 2000);
     });
 }
 
 export {
     waitsFor,
-    catchRejection
+    catchRejec
 }
